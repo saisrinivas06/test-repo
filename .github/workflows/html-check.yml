@@ -1,0 +1,22 @@
+name: HTML Validation
+
+on:
+  push:
+    branches: [ "main" ]  
+
+jobs:
+  html-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3   # 👈 Gets your HTML files
+
+      - name: List HTML files
+        run: |
+          echo "Checking HTML files:"
+          find . -name "*.html"
+
+      - name: Basic HTML validation (optional)
+        run: |
+          echo "No formal HTML test, but files exist!"
